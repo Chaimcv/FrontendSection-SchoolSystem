@@ -10,8 +10,9 @@ const TeachersDashboard = () => {
     },[]);
    console.log(teachers,"data accessed");
 
-   const deleteTeacher=()=>{
-    
+   const deleteTeacher = (deletionId) =>{
+    console.log(deletionId);
+    alert("Deleted successfully");
    }
   return (
     <div>
@@ -34,7 +35,7 @@ const TeachersDashboard = () => {
                 <td>{item?.name}</td>
                    <td>{item?.standard}</td>
                       <td><button className='bg-green-400 rounded-lg m-2 p-2'>View Details</button></td>
-                         <td><button className='bg-green-400 rounded-lg m-2 p-2' onClick={deleteTeacher}>Delete</button></td>
+                         <td><button className='bg-green-400 rounded-lg m-2 p-2' onClick={ ()=> deleteTeacher(item?.id)}>Delete</button></td>
               </tr>
             </tbody>
              ))}
