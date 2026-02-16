@@ -6,6 +6,7 @@ const initialState={
         errors:null,
         teacherData:[],        //for all teachers
         message:null,
+        oneTeacherDetailsData:null,
     }
 const TeacherSlice=createSlice({
     name:"Teacher",
@@ -20,6 +21,9 @@ const TeacherSlice=createSlice({
             },
             setMessage:(state,action)=>{
                 state.message=action.payload;
+            },
+            setOneTeacherData:(state,action)=>{
+                state.oneTeacherDetailsData=action.payload;
             }
          
     }
@@ -41,5 +45,21 @@ const TeacherSlice=createSlice({
             dispatch(setError(error));
         }
     }
- export const{setError,setTeacherData,setMessage}=TeacherSlice.actions;
+    export const fetchOneTeacherDetails=(id)=>async(dispatch)=>{
+        try {
+            console.log(id,"id");
+              const response=await axios.get(`${baseUrl}/teacher/${id}`)
+              
+             if(response.data)
+               {
+               
+                  dispatch(setOneTeacherData(response.data));
+    
+                 }
+           
+        } catch (error) {
+            dispatch(setError(error));  
+        }
+    }
+ export const{setError,setTeacherData,setMessage,setOneTeacherData}=TeacherSlice.actions;
  export default TeacherSlice.reducer;

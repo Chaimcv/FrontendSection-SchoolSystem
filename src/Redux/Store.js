@@ -4,6 +4,7 @@ import TeacherReducer from "./Slices/TeacherSlice";    //whole TeacherSlice will
 const store=configureStore({
     reducer:{
         teacher:TeacherReducer
+       
     }
 });
 export default store;

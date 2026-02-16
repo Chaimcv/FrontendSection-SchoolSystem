@@ -30,6 +30,7 @@ const TeachersDashboard = () => {
 
    const viewTeacherDetails=(teacherid)=>{
     console.log(teacherid,"teacher id got inside view function");
+    
      navigate(`/teacher/${teacherid}`);
    }
 
@@ -63,7 +64,7 @@ const TeachersDashboard = () => {
             </thead>
             
             <tbody  className='bg-green-200' >
-               {teachers.map((item)=>(
+               {TeachersDataInfo.map((item)=>(
               <tr key={item._id}>
                 <td>{item?.name}</td>
                    <td>{item?.standard}</td>
