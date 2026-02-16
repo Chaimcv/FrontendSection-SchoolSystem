@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios";
 
 const TeacherForm = ({OnAddTeacherClick}) => {
-      const SchoolUrl=process.env.REACT_APP_API_SCHOOL
+      const SchoolUrl=process.env.REACT_APP_API_SCHOOL;
       const[data,setData]=useState({
          name: "",
          age: "",
@@ -13,7 +13,7 @@ const TeacherForm = ({OnAddTeacherClick}) => {
           standard: ""
        });
     
-      const[response,setResponse]=useState();
+      //const[response,setResponse]=useState();
     
     //    useEffect(()=>{
     //    AddNewTeacher();
@@ -51,13 +51,13 @@ const TeacherForm = ({OnAddTeacherClick}) => {
 
 //...
 
-      axios.post(`${SchoolUrl}/teacher`,data).then((res)=>{
-       console.log(res.data,"added");
-       setResponse(res.data);
-       if(res.data){
-        OnAddTeacherClick()
-       }
-      });
+      // axios.post(`${SchoolUrl}/teacher`,data).then((res)=>{
+      //  console.log(res.data,"added");
+      //  setResponse(res.data);
+      //  if(res.data){
+      //   OnAddTeacherClick()
+      //  }
+      // });
        
     
 
