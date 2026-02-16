@@ -65,10 +65,6 @@ const TeacherForm = ({OnAddTeacherClick}) => {
     <div>
         <form onSubmit={AddNewTeacher}>
            <label>NAME:</label> <input type='text' value={data.name} onChange={(e)=>setData(e.target.value)} />
-             {/* <label></label> <input type='text' value={data} onChange={(e)=>setData(e.target.value)}>AGE:</input> */}
-                {/* <input type='text' onChange={(e)=>(e.target.value)}>GENDER:</input>
-                <input type='text' onChange={(e)=>(e.target.value)}>QUALIFICATION:</input>
-                  <input type='text' onChange={(e)=>(e.target.value)}>ADDRESS:</input> */}
                    <label>PINCODE</label> <input type='text' value={data.pin} onChange={(e)=>setData(e.target.value)} />
                      <label>CITY</label> <input type='text' value={data.city} onChange={(e)=>setData(e.target.value)} />
                        <label>SUBJECT</label> <input type='text' value={data.subject} onChange={(e)=>setData(e.target.value)} />
