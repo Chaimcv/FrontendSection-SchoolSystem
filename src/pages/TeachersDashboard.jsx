@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import TeacherForm from '../components/TeacherForm';
 import { fetchTeachersData } from '../Redux/Slices/TeacherSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const TeachersDashboard = () => {
   const SchoolUrl=process.env.REACT_APP_API_SCHOOL
 
   const dispatch=useDispatch();
+  const TeachersDataInfo=useSelector((state)=>state.teacher.teacherData);    //teacher=name in store,teacherData= data stored in slice
+  console.log(TeachersDataInfo,"teacherDataInfo");
 
  const [formvisible, setFormvisible] = useState(false);
 
