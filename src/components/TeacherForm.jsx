@@ -9,7 +9,7 @@ const TeacherForm = ({OnAddTeacherClick}) => {
          city: "",
          pin: "",
          subject: "",
-         phoneNumber: "",
+         phoneNumber:"",
           standard: ""
        });
     
@@ -64,14 +64,17 @@ const TeacherForm = ({OnAddTeacherClick}) => {
   return (
     <div>
         <form onSubmit={AddNewTeacher}>
-           <label>NAME:</label> <input type='text' value={data.name} onChange={(e)=>setData(e.target.value)} />
-                   <label>PINCODE</label> <input type='text' value={data.pin} onChange={(e)=>setData(e.target.value)} />
-                     <label>CITY</label> <input type='text' value={data.city} onChange={(e)=>setData(e.target.value)} />
-                       <label>SUBJECT</label> <input type='text' value={data.subject} onChange={(e)=>setData(e.target.value)} />
-                         <label>PHONENUMBER</label> <input type='number' value={data.phoneNumber} onChange={(e)=>setData(e.target.value)} />
-                           <label>STANDARD:</label> <input type='text' value={data.standard} onChange={(e)=>setData(e.target.value)} />
+          <div className='border border-black flex flex-col m-5 p-5 space-y-5 '>
+           <label>NAME: <input type='text' value={data.name} onChange={(e)=>setData(e.target.value)} /></label>
+                   <label>PINCODE<input type='text' value={data.pin} onChange={(e)=>setData(e.target.value)} /></label>
+                     <label>CITY <input type='text' value={data.city} onChange={(e)=>setData(e.target.value)} /></label>
+                       <label>SUBJECT <input type='text' value={data.subject} onChange={(e)=>setData(e.target.value)} /></label>
+                         <label>PHONENUMBER<input type='number' value={data.phoneNumber} onChange={(e)=>setData(e.target.value)} /></label>
+                           <label>STANDARD: <input type='text' value={data.standard} onChange={(e)=>setData(e.target.value)} /></label>
                         <button type='submit'>SUBMIT</button>
+                        </div>
         </form>
+        
     </div>
   )
 }
