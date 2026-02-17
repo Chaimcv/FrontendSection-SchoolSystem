@@ -1,82 +1,66 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import axios from "axios";
 
-const TeacherForm = ({OnAddTeacherClick}) => {
-      const SchoolUrl=process.env.REACT_APP_API_SCHOOL;
-      const[data,setData]=useState({
-         name: "",
-         age: "",
-         city: "",
-         pin: "",
-         subject: "",
-         phoneNumber:"",
-          standard: ""
-       });
-    
-      //const[response,setResponse]=useState();
-    
-    //    useEffect(()=>{
-    //    AddNewTeacher();
-    //   },[]);
+const TeacherForm = ({ OnAddTeacherClick }) => {
 
+  const SchoolUrl = process.env.REACT_APP_API_SCHOOL;
 
-// handles ALL inputs
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const [tname, setTname] = useState("");
+  const [tage, setTage] = useState("");
+  const [temail, setTemail] = useState("");
+  const [tpassword, setTpassword] = useState("");
+  const [tcity, setTcity] = useState("");
+  const [tpin, setTpin] = useState("");
+  const [tsubject, setTsubjectata] = useState("");
+  const [tphoneNumber, setTphonenumber] = useState("");
+  const [tstandard, setTstandard] = useState("");
 
-    setData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+  const AddNewTeacher = async (e) => {
+    e.preventDefault();
 
- 
-     
-      const AddNewTeacher = async (e) => {
-    e.preventDefault(); // stop reload
+    const Data = {      //backend:frontend
+      name: tname,
+     age: tage,
+     email: temail,
+     password: tpassword,
+     city: tcity,
+     pin: tpin,
+     subject: tsubject,
+     phonenumber: tphoneNumber,
+     standard: tstandard
+    };
 
-//....
- try {
-      const res = await axios.post(`${SchoolUrl}/teacher`, data);
+    try {
+      const res = await axios.post(`${SchoolUrl}/teacher`, Data);
       console.log(res.data, "added");
 
-      if (res.data) {
-        OnAddTeacherClick();
-      }
+      if (res.data) OnAddTeacherClick();
 
     } catch (err) {
       console.log(err);
     }
   };
 
-//...
-
-      // axios.post(`${SchoolUrl}/teacher`,data).then((res)=>{
-      //  console.log(res.data,"added");
-      //  setResponse(res.data);
-      //  if(res.data){
-      //   OnAddTeacherClick()
-      //  }
-      // });
-       
-    
-
   return (
     <div>
-        <form onSubmit={AddNewTeacher}>
-          <div className='border border-black flex flex-col m-5 p-5 space-y-5 '>
-           <label>NAME: <input type='text' value={data.name} onChange={(e)=>setData(e.target.value)} /></label>
-                   <label>PINCODE<input type='text' value={data.pin} onChange={(e)=>setData(e.target.value)} /></label>
-                     <label>CITY <input type='text' value={data.city} onChange={(e)=>setData(e.target.value)} /></label>
-                       <label>SUBJECT <input type='text' value={data.subject} onChange={(e)=>setData(e.target.value)} /></label>
-                         <label>PHONENUMBER<input type='number' value={data.phoneNumber} onChange={(e)=>setData(e.target.value)} /></label>
-                           <label>STANDARD: <input type='text' value={data.standard} onChange={(e)=>setData(e.target.value)} /></label>
-                        <button type='submit'>SUBMIT</button>
-                        </div>
-        </form>
-        
+      <form onSubmit={AddNewTeacher}>
+        <div className='border border-black flex flex-col m-5 p-5 space-y-5'>
+
+          <label>NAME: <input type='text' value={tname} onChange={(e)=>setTname(e.target.value)} /></label>
+          <label>EMAIL: <input type='text' value={temail} onChange={(e)=>setTemail(e.target.value)} /></label>
+          <label>PASSWORD: <input type='text' value={tpassword} onChange={(e)=>setTpassword(e.target.value)} /></label>
+          <label>PINCODE: <input type='text' value={tpin} onChange={(e)=>setTpin(e.target.value)} /></label>
+          <label>CITY: <input type='text' value={tcity} onChange={(e)=>setTcity(e.target.value)} /></label>
+          <label>SUBJECT: <input type='text' value={tsubject} onChange={(e)=>setTsubjectata(e.target.value)} /></label>
+          <label>PHONE: <input type='number' value={tphoneNumber} onChange={(e)=>setTphonenumber(e.target.value)} /></label>
+          <label>STANDARD: <input type='text' value={tstandard} onChange={(e)=>setTstandard(e.target.value)} /></label>
+
+          <button type='submit'>SUBMIT</button>
+
+        </div>
+      </form>
     </div>
   )
 }
 
-export default TeacherForm
+export default TeacherForm;

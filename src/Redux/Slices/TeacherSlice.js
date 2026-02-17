@@ -24,6 +24,9 @@ const TeacherSlice=createSlice({
             },
             setOneTeacherData:(state,action)=>{
                 state.oneTeacherDetailsData=action.payload;
+            },
+            setAddNewTeacherDb:(state,action)=>{
+                state.addNewTeacherToDb=action.payload;
             }
          
     }
@@ -61,5 +64,14 @@ const TeacherSlice=createSlice({
             dispatch(setError(error));  
         }
     }
- export const{setError,setTeacherData,setMessage,setOneTeacherData}=TeacherSlice.actions;
+    //add new teacher
+    export const addNewTeacherToDb=()=>async(dispatch)=>{
+        try {
+             const response=await axios.post(`${baseUrl}/teacher`)
+            
+        } catch (error) {
+            
+        }
+    }
+ export const{setError,setTeacherData,setMessage,setOneTeacherData,setAddNewTeacherDb}=TeacherSlice.actions;
  export default TeacherSlice.reducer;
