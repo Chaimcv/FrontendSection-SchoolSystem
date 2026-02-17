@@ -5,6 +5,7 @@ import AdminRoutes from './Routes/AdminRoutes';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import TeacherRoutes from './Routes/TeacherRoutes';
+import Homepage from './pages/Homepage';
 
 function App() {
 
@@ -28,6 +29,8 @@ function App() {
      
         <Route path="/admin/*" element={<AdminRoutes />}/>
         <Route path='/teacher/*' element={<TeacherRoutes />}/>
+
+        <Route path='/' element={<Homepage />}/>
       </Routes>
       </BrowserRouter>
          <Footer />
