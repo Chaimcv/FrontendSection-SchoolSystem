@@ -91,5 +91,5 @@ const TeacherSlice=createSlice({
            dispatch(setError(error));     
         }
     }
- export const{setError,setTeacherData,setMessage,setOneTeacherData,setAddNewTeacherDb}=TeacherSlice.actions;
+ export const{setError,setTeacherData,setMessage,setOneTeacherData,setAddNewTeacherDb,setEditedTeacherData}=TeacherSlice.actions;
  export default TeacherSlice.reducer;

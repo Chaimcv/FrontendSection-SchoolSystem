@@ -22,8 +22,8 @@ console.log(oneTeacherDetail,"oneteacher");
 
        const EditTeacherDetails=(EditId)=>{
         setEditFormVisibility(true);
-      console.log(EditId,"editid");
-      dispatch(fetchOneTeacherDetails(EditId))
+      console.log(EditId,"editid");                          
+      dispatch(fetchOneTeacherDetails(EditId))                 //passed id
        }
       
   return (
