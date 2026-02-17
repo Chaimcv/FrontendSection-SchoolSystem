@@ -2,7 +2,7 @@ import React from 'react'
 
 const AddStudentForm = () => {
   return (
-    <div>AddStudentForm</div>
+    <div className='bg-yellow-200'>AddStudentForm</div>
   )
 }
 
