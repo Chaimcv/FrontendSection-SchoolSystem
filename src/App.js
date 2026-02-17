@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import TeacherRoutes from './Routes/TeacherRoutes';
 import Homepage from './pages/Homepage';
+import Login from './pages/Login';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         <Route path='/teacher/*' element={<TeacherRoutes />}/>
 
         <Route path='/' element={<Homepage />}/>
+        <Route path='/login' element={<Login />}/>
       </Routes>
       </BrowserRouter>
          <Footer />

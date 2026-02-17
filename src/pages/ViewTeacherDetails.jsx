@@ -36,16 +36,16 @@ console.log(oneTeacherDetail,"oneteacher");
 
     {oneTeacherDetail ? (
       <div>
-        <h2>Name: {oneTeacherDetail.data.name}</h2>
-        <h2>Class: {oneTeacherDetail.data.standard}</h2>
-        <h2>City: {oneTeacherDetail.data.city}</h2>
-        <h2>Pincode: {oneTeacherDetail.data.pin}</h2>
-        <h2>Phonenumber: {oneTeacherDetail.data.phoneNumber}</h2>
+        <h2>Name: {oneTeacherDetail.name}</h2>
+        <h2>Class: {oneTeacherDetail.standard}</h2>
+        <h2>City: {oneTeacherDetail.city}</h2>
+        <h2>Pincode: {oneTeacherDetail.pin}</h2>
+        <h2>Phonenumber: {oneTeacherDetail.phoneNumber}</h2>
       </div>
     ) : (
       <h2>No teacher</h2>
     )}
-    <button onClick={()=>EditTeacherDetails(oneTeacherDetail?.data?._id)} >Edit</button>
+    <button onClick={()=>EditTeacherDetails(oneTeacherDetail?._id)} >Edit</button>
     </div>
   )
 }

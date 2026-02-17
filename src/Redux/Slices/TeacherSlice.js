@@ -59,7 +59,7 @@ const TeacherSlice=createSlice({
              if(response.data)
                {
                
-                  dispatch(setOneTeacherData(response.data));
+                  dispatch(setOneTeacherData(response.data.data));
     
                  }
            
@@ -78,15 +78,16 @@ const TeacherSlice=createSlice({
     }
 
     //edited teacher posted
-    export const postEditedTeacherDetails=(id)=>async(dispatch)=>{
+    export const postEditedTeacherDetails=({id,formData})=>async(dispatch)=>{
         try {
-            const response=await axios.post(`${baseUrl}/teacher/${id}`)
-            // if(response.data)
-            //    {
+            console.log(id,"edit id in teacherslice");
+            const response=await axios.put(`${baseUrl}/teacher/${id}`,formData)
+            if(response.data)
+               {
                
-            //       dispatch(setEditedTeacherData(response.data));
+                  dispatch(setEditedTeacherData(response.data));
     
-            //      }
+                 }
         } catch (error) {
            dispatch(setError(error));     
         }
