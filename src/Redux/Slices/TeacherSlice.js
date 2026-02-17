@@ -27,6 +27,9 @@ const TeacherSlice=createSlice({
             },
             setAddNewTeacherDb:(state,action)=>{
                 state.addNewTeacherToDb=action.payload;
+            },
+            setEditedTeacherData:(state,action)=>{
+                state.postEditedTeacherDetails=action.payload;
             }
          
     }
@@ -64,13 +67,28 @@ const TeacherSlice=createSlice({
             dispatch(setError(error));  
         }
     }
-    //add new teacher
+    //add new teacher   not done-------------
     export const addNewTeacherToDb=()=>async(dispatch)=>{
         try {
              const response=await axios.post(`${baseUrl}/teacher`)
             
         } catch (error) {
-            
+             dispatch(setError(error));   
+        }
+    }
+
+    //edited teacher posted
+    export const postEditedTeacherDetails=(id)=>async(dispatch)=>{
+        try {
+            const response=await axios.post(`${baseUrl}/teacher/${id}`)
+            // if(response.data)
+            //    {
+               
+            //       dispatch(setEditedTeacherData(response.data));
+    
+            //      }
+        } catch (error) {
+           dispatch(setError(error));     
         }
     }
  export const{setError,setTeacherData,setMessage,setOneTeacherData,setAddNewTeacherDb}=TeacherSlice.actions;

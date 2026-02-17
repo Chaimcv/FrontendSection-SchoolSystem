@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import TeacherForm from '../components/TeacherForm';
+import AddTeacherForm from '../components/AddTeacherForm';
 import { fetchTeachersData } from '../Redux/Slices/TeacherSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -43,11 +43,12 @@ const TeachersDashboard = () => {
       );
     console.log(deletionId);
     alert("Deleted successfully");
+    dispatch(fetchTeachersData()); 
    }
   return (
     <div>
       { formvisible && (
-        <TeacherForm
+        <AddTeacherForm
         OnAddTeacherClick={()=>setFormvisible(false)} />
       )}
       <div><h3>Add New Teacher  <button onClick={AddTeacher}>+</button></h3></div>
