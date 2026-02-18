@@ -5,18 +5,24 @@ const AddNewStudent = () => {
     <div className='bg-violet-400'>
         {/* <div></div> */}
         <div>
-            <form>
-            <label>NAME<input type='text' /></label>
-             <label>AGE<input type='text' /></label>
-              <label>GENDER<input type='text' /></label>
-               <label>STANDARD<input type='text' /></label>
-                <label>DIVISION<input type='text' /></label>
-                 <label>GUARDIAN NAME<input type='text' /></label>
-                  <label>GUARDIAN PHONENUMBER<input type='text' /></label>
-                   <label>ADDRESS<input type='text' /></label>
-                    <label>PINCODE<input type='text' /></label>
-                    <button>SUBMIT</button>
-                    </form>
+           <table>
+            <tbody>
+                <tr><th></th></tr>
+                
+            <tr className=''>
+           <td> <label>NAME<input type='text' /></label></td>
+            <td>  <label>AGE<input type='text' /></label></td>
+             <td>  <label>GENDER<input type='text' /></label></td>
+              <td>  <label>STANDARD<input type='text' /></label></td>
+              <td>   <label>DIVISION<input type='text' /></label></td>
+              <td>    <label>GUARDIAN NAME<input type='text' /></label></td>
+              <td>     <label>GUARDIAN PHONENUMBER<input type='text' /></label></td>
+                <td>    <label>ADDRESS<input type='text' /></label></td>
+                 <td>    <label>PINCODE<input type='text' /></label></td>
+                 <td>    <button>SUBMIT</button></td>
+                    </tr>
+                    </tbody>
+                  </table>  
         </div>
         <div></div>
     </div>
