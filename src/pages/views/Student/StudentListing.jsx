@@ -24,7 +24,7 @@ const StudentListing = () => {
        dispatch(fetchStudentsData());
       }
       const AddStudent=()=>{
-        navigate("");
+        navigate("/newStudent");
       }
   return (
     <div className='bg-amber-100'>

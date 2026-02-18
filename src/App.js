@@ -8,6 +8,7 @@ import TeacherRoutes from './Routes/TeacherRoutes';
 import Homepage from './pages/Homepage';
 import Login from './pages/Login';
 import StudentListing from './pages/views/Student/StudentListing';
+import AddNewStudent from './pages/views/Student/AddNewStudent';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
         <Route path='/' element={<Homepage />}/>
         <Route path='/login' element={<Login />}/>
          <Route path='/allStudentslisted' element={<StudentListing />}/>
+          <Route path='/newStudent' element={<AddNewStudent />}/>
 
       </Routes>
       </BrowserRouter>
