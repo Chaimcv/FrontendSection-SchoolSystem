@@ -2,19 +2,21 @@ import React from 'react'
 
 const AddNewStudent = () => {
   return (
-    <div>
-        <div></div>
+    <div className='bg-violet-400'>
+        {/* <div></div> */}
         <div>
-            <input type='text'>NAME</input>
-             <input type='text'>AGE</input>
-              <input type='text'>GENDER</input>
-               <input type='text'>STANDARD</input>
-                <input type='text'>DIVISION</input>
-                 <input type='text'>GUARDIAN NAME</input>
-                  <input type='text'>GUARDIAN PHONENUMBER</input>
-                   <input type='text'>ADDRESS</input>
-                    <input type='text'>PINCODE</input>
+            <form>
+            <label>NAME<input type='text' /></label>
+             <label>AGE<input type='text' /></label>
+              <label>GENDER<input type='text' /></label>
+               <label>STANDARD<input type='text' /></label>
+                <label>DIVISION<input type='text' /></label>
+                 <label>GUARDIAN NAME<input type='text' /></label>
+                  <label>GUARDIAN PHONENUMBER<input type='text' /></label>
+                   <label>ADDRESS<input type='text' /></label>
+                    <label>PINCODE<input type='text' /></label>
                     <button>SUBMIT</button>
+                    </form>
         </div>
         <div></div>
     </div>
