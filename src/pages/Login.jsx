@@ -5,6 +5,7 @@ import { fetchTeachersData } from '../Redux/Slices/TeacherSlice';
 const Login = () => {
     const[inputtedEmail,setInputtedEmail]=useState();
     const[inputtedPassword,setInputtedPassword]=useState();
+    const navigate=useNavigate();
 
     const DatabaseValues=useSelector((state)=>state.teacher.teacherData);
     console.log(DatabaseValues,"valuesss");
@@ -16,9 +17,18 @@ const Login = () => {
      console.log(inputtedEmail,"email");
      console.log(inputtedPassword,"password");
     }
-   
+   const TeacherLoginPage=()=>{
+    navigate("/teacherlogin");
+   }
+    const PrincipalLoginPage=()=>{
+    navigate("/adminlogin");
+   }
   return (
     <div>
+      <div>
+        <button onClick={TeacherLoginPage}>LOGIN AS TEACHER</button>
+         <button onClick={PrincipalLoginPage}>LOGIN AS PRINCIPAL</button>
+      </div>
         <div className=' border border-gray-600 rounded-md bg-slate-400 m-10 p-5 space-y-5'>
           <label >Email:  <input className='p-2 m-1'type='text'value={inputtedEmail} onChange={(e)=>setInputtedEmail(e.target.value)} placeholder='Enter your email'></input></label><br/> 
             <label >Password<input className='p-2 m-1' type='password' value={inputtedPassword} onChange={(e)=>setInputtedPassword(e.target.value)} placeholder='Enter your password'></input></label> <br />
