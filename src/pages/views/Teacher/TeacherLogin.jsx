@@ -1,10 +1,40 @@
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchTeachersData } from '../../../Redux/Slices/TeacherSlice';
+import { useNavigate } from 'react-router-dom';
 
 const TeacherLogin = () => {
      const[inputtedEmail,setInputtedEmail]=useState();
         const[inputtedPassword,setInputtedPassword]=useState();
+         const navigate=useNavigate();
+         const DatabaseValues=useSelector((state)=>state.teacher.teacherData);
+         console.log(DatabaseValues,"valuesss");
+
+//          const test = DatabaseValues.find(
+//   (t) => t.Email === inputtedEmail
+// );
+
+// console.log(test?.name);
+
+         const test=DatabaseValues.find((t)=>
+            t.Email===inputtedEmail);
+         const teacherIdPassedForLogin=test?._id;
+            console.log(teacherIdPassedForLogin,"specific value");
+        //   console.log(test?.password,"specific value");
+     const dispatch=useDispatch();
+     
         const LoginAsTeacher=()=>{
-            
+          dispatch(fetchTeachersData());
+          if(inputtedEmail===test?.Email&& inputtedPassword===test?.Password){
+            console.log("ok");
+            navigate(`/teacher/profile/${teacherIdPassedForLogin}`);
+
+          }
+          else{
+            console.log("not ok");
+          }
+              console.log(inputtedEmail,"email");
+              console.log(inputtedPassword,"password");
         }
   return (
     <div>

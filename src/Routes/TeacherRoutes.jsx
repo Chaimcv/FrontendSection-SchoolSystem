@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import TeachersDashboard from '../pages/TeachersDashboard'
 import ViewTeacherDetails from '../pages/ViewTeacherDetails'
 import TeacherLogin from '../pages/views/Teacher/TeacherLogin'
+import TeacherHomepage from '../pages/views/Teacher/TeacherHomepage'
 
 const TeacherRoutes = () => {
  
@@ -11,9 +12,13 @@ const TeacherRoutes = () => {
   return (
     <div className='bg-gray-300'>
         <Routes>
-           <Route path="/" element={<TeacherLogin />}/>
+
+           <Route path="/login" element={<TeacherLogin />}/>
+           
             <Route path="/teacherDashboard" element={<TeachersDashboard />}/>
-             <Route path="/:teacherid" element={<ViewTeacherDetails />}/>
+             
+             <Route path="/profile/:loggedteacherId" element={<TeacherHomepage />}/>
+            <Route path="/details/:teacherid" element={<ViewTeacherDetails />}/>       
         </Routes>
     </div>
   )

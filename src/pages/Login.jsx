@@ -19,7 +19,7 @@ const Login = () => {
      console.log(inputtedPassword,"password");
     }
    const TeacherLoginPage=()=>{
-    navigate("/teacher");
+    navigate("/teacher/login");
    }
     const PrincipalLoginPage=()=>{
     navigate("/admin");

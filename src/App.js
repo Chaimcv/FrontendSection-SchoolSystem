@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import TeacherRoutes from './Routes/TeacherRoutes';
 import Homepage from './pages/Homepage';
 import Login from './pages/Login';
+import StudentListing from './pages/views/Student/StudentListing';
 
 function App() {
 
@@ -33,6 +34,8 @@ function App() {
 
         <Route path='/' element={<Homepage />}/>
         <Route path='/login' element={<Login />}/>
+         <Route path='/allStudentslisted' element={<StudentListing />}/>
+
       </Routes>
       </BrowserRouter>
          <Footer />
