@@ -11,7 +11,7 @@ const TeacherRoutes = () => {
   return (
     <div className='bg-gray-300'>
         <Routes>
-           <Route path="/teacherlogin" element={<TeacherLogin />}/>
+           <Route path="/" element={<TeacherLogin />}/>
             <Route path="/teacherDashboard" element={<TeachersDashboard />}/>
              <Route path="/:teacherid" element={<ViewTeacherDetails />}/>
         </Routes>
