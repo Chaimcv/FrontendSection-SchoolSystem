@@ -4,7 +4,7 @@ import StudentSlice from "./Slices/StudentSlice";
 const store=configureStore({
     reducer:{
         teacher:TeacherReducer,
-        student:StudentSlice
+        student:StudentSlice,
        
     }
 });
