@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteAStudent, fetchStudentsData } from '../../../Redux/Slices/StudentSlice';
+import { useNavigate } from 'react-router-dom';
 
 const StudentListing = () => {
       const dispatch=useDispatch();
+      const navigate=useNavigate();
  
       const AllStudents=useSelector((state)=>state.student.studentData)||[]; 
       console.log(AllStudents,"all students");
@@ -22,7 +24,7 @@ const StudentListing = () => {
        dispatch(fetchStudentsData());
       }
       const AddStudent=()=>{
-
+        navigate("");
       }
   return (
     <div className='bg-amber-100'>
