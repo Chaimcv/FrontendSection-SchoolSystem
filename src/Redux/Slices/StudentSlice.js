@@ -77,7 +77,7 @@ const StudentSlice=createSlice({
         }
     }
     //add new student  
-    export const addNewStudentToDb=({formData})=>async(dispatch)=>{
+    export const addNewStudentToDb=(formData)=>async(dispatch)=>{
         try {
              const response=await axios.post(`${baseUrl}/student`,formData)
             

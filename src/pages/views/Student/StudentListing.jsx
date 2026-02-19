@@ -21,7 +21,7 @@ const StudentListing = () => {
       const deleteStudent=(studentIdToDelete)=>{
         console.log(studentIdToDelete,"id");
       dispatch(deleteAStudent(studentIdToDelete));
-       dispatch(fetchStudentsData());
+      // dispatch(fetchStudentsData());
       }
       const AddStudent=()=>{
         navigate("/addNewStudent");
