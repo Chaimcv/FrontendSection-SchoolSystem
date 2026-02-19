@@ -9,6 +9,7 @@ import Homepage from './pages/Homepage';
 import Login from './pages/Login';
 import StudentListing from './pages/views/Student/StudentListing';
 import AddNewStudent from './pages/views/Student/AddNewStudent';
+import ViewStudentDetails from './pages/views/Student/ViewStudentDetails';
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
         <Route path='/login' element={<Login />}/>
          <Route path='/allStudentslisted' element={<StudentListing />}/>
           <Route path='/addNewStudent' element={<AddNewStudent />}/>
+           <Route path='/viewAStudent/:id' element={<ViewStudentDetails />}/>
 
       </Routes>
       </BrowserRouter>

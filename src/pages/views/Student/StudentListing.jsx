@@ -4,6 +4,7 @@ import { deleteAStudent, fetchStudentsData } from '../../../Redux/Slices/Student
 import { useNavigate } from 'react-router-dom';
 
 const StudentListing = () => {
+  
       const dispatch=useDispatch();
       const navigate=useNavigate();
  
@@ -14,25 +15,25 @@ const StudentListing = () => {
         dispatch(fetchStudentsData());
       },[]);
 
-      const viewStudentDetails=()=>{
-
+      const viewStudentDetails=(studentIDToView)=>{
+        navigate(`/viewAStudent/${studentIDToView}`);
       }
 
-      const deleteStudent=(studentIdToDelete)=>{
-        console.log(studentIdToDelete,"id");
-      dispatch(deleteAStudent(studentIdToDelete));
-      // dispatch(fetchStudentsData());
-      }
+      const deleteStudent = async (studentIdToDelete) => {
+  await dispatch(deleteAStudent(studentIdToDelete));
+  dispatch(fetchStudentsData());
+};
+
       const AddStudent=()=>{
         navigate("/addNewStudent");
       }
   return (
     <div className='bg-amber-100'>
         
-         <div className='bg-amber-200'><h3>Add New Student  <button className='rounded-md bg-amber-500 px-7' onClick={AddStudent}>+</button></h3></div>
+         <div ><h3>Add New Student  <button className='rounded-md bg-amber-500 px-7 ml-4' onClick={AddStudent}>+</button></h3></div>
       <div>
-        <h3>Students</h3>
-          <table className='auto p-2 m-10'>
+        <h3 className='font-semibold p-3'>Students</h3>
+          <table className='auto p-2 mx-10'>
             <thead className='bg-amber-700'>
               <tr className='p-5'>
                 <th className='p-5'> NAME </th>
