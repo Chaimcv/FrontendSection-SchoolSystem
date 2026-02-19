@@ -29,14 +29,15 @@ const AddNewStudent = () => {
   }));
 };
 
-    const AddStudent=(e)=>{
-       e.preventDefault(); 
+    const AddStudent=()=>{
+    
     dispatch(addNewStudentToDb(formdata));
     navigate("/allStudentslisted");
     }
   return (
     <div className='bg-amber-200 border border-amber-600 '>
     <h2 className='align-middle font-semibold'>Add Student Details</h2>
+    
    <form onSubmit={AddStudent}>
           <div className='h-full flex flex-col m-5 p-5 space-y-5'>
             
@@ -47,9 +48,9 @@ const AddNewStudent = () => {
               <label>STANDARD <input type='number' name='standard' value={formdata.standard} onChange={handleChange} /></label>
               <label>DIVISION <input type='text' name='division' value={formdata.division} onChange={handleChange} /></label>
              <label>GUARDIAN NAME <input type='text' name='guardian' value={formdata.guardian} onChange={handleChange} /></label>
-            <label>GUARDIAN PHONENUMBER <input type='text' name="guardian_phonenumber" value={formdata.guardian_phonenumber} onChange={handleChange} /></label>
+            <label>GUARDIAN PHONENUMBER <input type='number' name="guardian_phonenumber" value={formdata.guardian_phonenumber} onChange={handleChange} /></label>
                  <label>ADDRESS <input type='text' name='address' value={formdata.address} onChange={handleChange} /></label>
-                    <label>PINCODE <input type='text' name='pincode' value={formdata.pincode} onChange={handleChange} /></label>
+                    <label>PINCODE <input type='number' name='pincode' value={formdata.pincode} onChange={handleChange} /></label>
                     
               <button className='bg-amber-400  '>SUBMIT</button>
               

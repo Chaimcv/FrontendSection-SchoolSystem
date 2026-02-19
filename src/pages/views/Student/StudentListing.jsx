@@ -27,10 +27,15 @@ const StudentListing = () => {
       const AddStudent=()=>{
         navigate("/addNewStudent");
       }
+      const AddParent=()=>{
+        navigate("/addingParent");
+      }
   return (
     <div className='bg-amber-100'>
         
-         <div ><h3>Add New Student  <button className='rounded-md bg-amber-500 px-7 ml-4' onClick={AddStudent}>+</button></h3></div>
+         <div >
+          <h3>Add New Student  <button className='rounded-md bg-amber-500 px-7 ml-3 mt-1' onClick={AddStudent}>+</button>
+         <h3>Add Parent  <button className='rounded-md bg-amber-500 px-7 ml-14 mt-1' onClick={AddParent}>+</button></h3></h3></div>
       <div>
         <h3 className='font-semibold p-3'>Students</h3>
           <table className='auto p-2 mx-10'>
