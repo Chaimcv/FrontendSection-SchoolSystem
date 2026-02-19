@@ -35,7 +35,7 @@ const AddParent = () => {
                   <label>STUDENT NAME: 
                 <select value={formData.studentname} onChange={handleChange}>
                     {students.map((item)=>(
-            <option key={students.id} value={students.Name} >{item.Name}</option>
+            <option key={students?._id} value={students.Name} >{item.Name}</option>
             
         ))}
         </select>

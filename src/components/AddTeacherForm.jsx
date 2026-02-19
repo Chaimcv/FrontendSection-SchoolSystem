@@ -8,23 +8,23 @@ const AddTeacherForm = ({ OnAddTeacherClick }) => {
   const [tname, setTname] = useState("");
   const [tage, setTage] = useState("");
   const [temail, setTemail] = useState("");
-  const [tpassword, setTpassword] = useState("");
+  // const [tpassword, setTpassword] = useState("");
   const [tcity, setTcity] = useState("");
   const [tpin, setTpin] = useState("");
   const [tsubject, setTsubjectata] = useState("");
   const [tphoneNumber, setTphonenumber] = useState("");
   const [tstandard, setTstandard] = useState("");
 
-   const generatePassword=()=> {
-    var length = 8,
-        charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-        retVal = "";
-    for (var i = 0, n = charset.length; i < length; ++i) {
-        retVal += charset.charAt(Math.floor(Math.random() * n));
-    }
-    setTpassword(retVal);
-    console.log(tpassword,"password generated");
-}
+//    const generatePassword=()=> {
+//     var length = 8,
+//         charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+//         retVal = "";
+//     for (var i = 0, n = charset.length; i < length; ++i) {
+//         retVal += charset.charAt(Math.floor(Math.random() * n));
+//     }
+//     setTpassword(retVal);
+//     console.log(tpassword,"password generated");
+// }
   const AddNewTeacher = async () => {
 
   
@@ -32,7 +32,7 @@ const AddTeacherForm = ({ OnAddTeacherClick }) => {
       name: tname,
      age: tage,
      email: temail,
-     password: tpassword,
+    //  password: tpassword,
      city: tcity,
      pin: tpin,
      subject: tsubject,
@@ -72,7 +72,7 @@ const AddTeacherForm = ({ OnAddTeacherClick }) => {
           <label>PHONE: <input type='number' value={tphoneNumber} onChange={(e)=>setTphonenumber(e.target.value)} /></label>
           <label>STANDARD: <input type='text' value={tstandard} onChange={(e)=>setTstandard(e.target.value)} /></label>
 
-          <button type='submit' onClick={generatePassword}>SUBMIT</button>
+          <button type='submit'>SUBMIT</button>
 
         </div>
       </form>
