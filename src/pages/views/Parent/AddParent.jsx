@@ -9,6 +9,7 @@ const AddParent = () => {
     email:"",
     studentname:"",
     studentId:"",
+    phonenumber:"",
     address:"",
     pincode:""
 
@@ -44,7 +45,7 @@ const AddParent = () => {
               <label>EMAIL :  <input type='email' name="email" value={formData.email} onChange={handleChange}></input></label>
                <label>ADDRESS :  <input type='text' name="address" value={formData.address} onChange={handleChange}></input></label>
                 <label>PINCODE :<input type='number' name="pincode" value={formData.pincode} onChange={handleChange}></input></label>
-                {/* <input type='text' name="" onChange={handleChange}></input> */}
+               <label>PHONENUMBER:  <input type='number' name="phonenumber" value={formData.phonenumber} onChange={handleChange}></input></label>
                 <button className='bg-green-600 p-2 rounded-lg'>Sumbit</button>
             </div>
         </form>
