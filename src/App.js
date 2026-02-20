@@ -12,6 +12,7 @@ import AddNewStudent from './pages/views/Student/AddNewStudent';
 import ViewStudentDetails from './pages/views/Student/ViewStudentDetails';
 import AddParent from './pages/views/Parent/AddParent';
 import ParentLogin from './pages/views/Parent/ParentLogin';
+import ParentsList from './pages/views/Parent/ParentsList';
 
 function App() {
 
@@ -46,6 +47,7 @@ function App() {
            {/* parent */}
             <Route path='/addingParent' element={<AddParent />}/>
             <Route path='/parentLogin' element={<ParentLogin />}/>
+             <Route path='/parentslist' element={<ParentsList />}/>
       </Routes>
       </BrowserRouter>
          <Footer />

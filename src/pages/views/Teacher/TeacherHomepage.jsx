@@ -7,13 +7,17 @@ const TeacherHomepage = () => {
     const StudentList=()=>{
         navigate("/allStudentslisted");
     }
+    const ParentList=()=>{
+        navigate("/parentslist");
+    }
   return (
     <div className='bg-green-200'>
         <div>
-            <button>Profile</button>
+            <button className='bg-green-500 rounded-lg p-2 m-2'>My Profile</button>
         </div>
         <div>
-            <button onClick={StudentList}>Students</button>
+            <button className='bg-green-500 rounded-lg p-2 m-2' onClick={StudentList}>Students</button><br />
+             <button className='bg-green-500 rounded-lg p-2 m-2' onClick={ParentList}>Parents</button>
             <button></button>
         </div>
     </div>
