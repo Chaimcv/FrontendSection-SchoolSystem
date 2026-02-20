@@ -36,13 +36,49 @@ const AddNewParent=()=>{
   dispatch(addNewParentToDb(formData));
   navigate("/allStudentslisted");
 }
+
+
+//....
+
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+
+//     setFormData((prev) => ({
+//       ...prev,
+//       [name]: value,
+//     }));
+//   };
+
+//   const handleStudentChange = (e) => {
+//     const selectedId = e.target.value;
+
+//     const selectedStudent = students.find(
+//       (student) => student._id === selectedId
+//     );
+
+//     setFormData((prev) => ({
+//       ...prev,
+//       studentId: selectedStudent?._id || "",
+//       studentname: selectedStudent?.Name || "",
+//     }));
+//   };
+
+//   const AddNewParent = (e) => {
+//     e.preventDefault();
+//     dispatch(addNewParentToDb(formData));
+//   };
+// //.....
   return (
     <div className='bg-green-300 h-screen '>
        
         <form onSubmit={AddNewParent}>
             <div className='flex flex-col m-16 p-4 space-y-4'>
                   <label>STUDENT NAME: 
-                <select name="studentname" value={formData.studentname} onChange={handleChange}>
+                <select 
+              //    name="studentId"
+              // value={formData.studentId}
+              // onChange={handleStudentChange}
+                name="studentname" value={formData.studentname} onChange={handleChange}>
                     {students.map((item)=>(  
             // <option key={students?._id} value={students.Name} >{item.Name}</option>
               <option key={item?._id} value={item.Name} >{item.Name}</option>

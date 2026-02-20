@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { loginParent } from '../../../Redux/Slices/ParentSlice';
 
 const ParentLogin = () => {
-    const[inputtedEmail,setInputtedEmail]=useState();
-    const[inputtedPassword,setInputtedPassword]=useState();
+    const[inputtedEmail,setInputtedEmail]=useState("");
+    const[inputtedPassword,setInputtedPassword]=useState("");
     const navigate=useNavigate();
     const dispatch=useDispatch();
     const LoginAsParent=()=>{
