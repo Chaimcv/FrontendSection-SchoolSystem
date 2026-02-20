@@ -117,8 +117,17 @@ const ParentSlice=createSlice({
     } catch (error) {
          dispatch(setError(error)); 
     }
-    }
-   
+    };
+ //login
+ export const loginParent=({inputtedEmail,inputtedPassword})=>async(dispatch)=>{
+  console.log(inputtedEmail,"inputted email");
+  try {
+    const response=await axios.post(`${baseUrl}/parent/${inputtedEmail,inputtedPassword}`)
+    console.log(response," login response");
+  } catch (error) {
+     dispatch(setError(error)); 
+  }
+ }
 
-    export const{setError,setParentData,setMessage,setOneParentData,setAddNewParentToDb,setPostEditedParentData,setDeleteParent}=ParentSlice.actions;
+ export const{setError,setParentData,setMessage,setOneParentData,setAddNewParentToDb,setPostEditedParentData,setDeleteParent,LoginParent}=ParentSlice.actions;
 export default ParentSlice.reducer;

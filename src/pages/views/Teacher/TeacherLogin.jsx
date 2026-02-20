@@ -36,12 +36,18 @@ const TeacherLogin = () => {
               console.log(inputtedEmail,"email");
               console.log(inputtedPassword,"password");
         }
+        const BackToLogin=()=>{
+   navigate("/login");
+    }
   return (
     <div>
          <div className=' border border-orange-600 rounded-md bg-orange-400 m-10 p-5 space-y-5'>
           <label >Email:  <input className='p-2 m-1'type='text'value={inputtedEmail} onChange={(e)=>setInputtedEmail(e.target.value)} placeholder='Enter your email'></input></label><br/> 
             <label >Password: <input className='p-2 m-1' type='password' value={inputtedPassword} onChange={(e)=>setInputtedPassword(e.target.value)} placeholder='Enter your password'></input></label> <br />
-            <button className="bg-orange-100 rounded-lg p-2" onClick={LoginAsTeacher}>LOGIN</button>
+          <div>
+            <button className="bg-orange-100 rounded-lg p-2 m-2" onClick={LoginAsTeacher}>LOGIN</button>
+             <button className="bg-orange-100 rounded-lg p-2" onClick={BackToLogin}>BACK</button>
+             </div>
         </div>
     </div>
   )
