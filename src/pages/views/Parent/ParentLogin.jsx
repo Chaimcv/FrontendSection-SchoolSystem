@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
 
 const ParentLogin = () => {
     const[inputtedEmail,setInputtedEmail]=useState();
     const[inputtedPassword,setInputtedPassword]=useState();
     const LoginAsParent=()=>{
-        
+
     }
   return (
     <div>  <div>

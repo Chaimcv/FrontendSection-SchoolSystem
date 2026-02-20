@@ -23,11 +23,11 @@ const AdminLogin = () => {
     }
    } 
   return (
-    <div className='bg-red-400'>
-        <div>
-            <h3>email </h3><input type='email' value={adminEmail} onChange={(e)=>setAdminemail(e.target.value)}></input>
-             <h3>Password </h3><input type='password' value={adminPassword} onChange={(e)=>setAdminPassword(e.target.value)}></input>
-             <button onClick={checkValidAdmin}>Login</button>
+    <div>
+        <div  className=' border border-red-600 rounded-md bg-red-400 m-10 p-5 space-y-5'>
+            <label>Email <input className='p-2 m-1 rounded-sm' type='email' placeholder='Enter  registered email' value={adminEmail} onChange={(e)=>setAdminemail(e.target.value)} /></label><br />
+             <label>Password <input  className='p-2 m-1 rounded-sm' type='password' placeholder='Enter password' value={adminPassword} onChange={(e)=>setAdminPassword(e.target.value)} /></label><br />
+             <button className="bg-red-100 rounded-lg p-2" onClick={checkValidAdmin}>Login</button>
         </div>
         {/* <div><h5>New Admin? Register here</h5><button onClick={navigateToRegistration()}>SignUp</button></div> */}
     </div>
