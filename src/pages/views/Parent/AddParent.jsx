@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addNewParentToDb } from '../../../Redux/Slices/ParentSlice';
+import { useNavigate } from 'react-router-dom';
 
 const AddParent = () => {
    const students= useSelector((state)=>state.student.studentData);
+   const dispatch=useDispatch();
+   const navigate=useNavigate();
    //const[nameSelection,setNameSelection]=useState();
    const[formData,setFormData]=useState({
     name:"",
@@ -28,15 +32,20 @@ const AddParent = () => {
     [name]: value
   }));
 };
+const AddNewParent=()=>{
+  dispatch(addNewParentToDb(formData));
+  navigate("/allStudentslisted");
+}
   return (
     <div className='bg-green-300 h-screen '>
        
-        <form>
+        <form onSubmit={AddNewParent}>
             <div className='flex flex-col m-16 p-4 space-y-4'>
                   <label>STUDENT NAME: 
-                <select value={formData.studentname} onChange={handleChange}>
-                    {students.map((item)=>(
-            <option key={students?._id} value={students.Name} >{item.Name}</option>
+                <select name="studentname" value={formData.studentname} onChange={handleChange}>
+                    {students.map((item)=>(  
+            // <option key={students?._id} value={students.Name} >{item.Name}</option>
+              <option key={item?._id} value={item.Name} >{item.Name}</option>
             
         ))}
         </select>
