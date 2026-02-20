@@ -11,6 +11,7 @@ import StudentListing from './pages/views/Student/StudentListing';
 import AddNewStudent from './pages/views/Student/AddNewStudent';
 import ViewStudentDetails from './pages/views/Student/ViewStudentDetails';
 import AddParent from './pages/views/Parent/AddParent';
+import ParentLogin from './pages/views/Parent/ParentLogin';
 
 function App() {
 
@@ -37,11 +38,14 @@ function App() {
 
         <Route path='/' element={<Homepage />}/>
         <Route path='/login' element={<Login />}/>
+        {/* student */}
          <Route path='/allStudentslisted' element={<StudentListing />}/>
           <Route path='/addNewStudent' element={<AddNewStudent />}/>
            <Route path='/viewAStudent/:id' element={<ViewStudentDetails />}/>
-            <Route path='/addingParent' element={<AddParent />}/>
 
+           {/* parent */}
+            <Route path='/addingParent' element={<AddParent />}/>
+            <Route path='/parentLogin' element={<ParentLogin />}/>
       </Routes>
       </BrowserRouter>
          <Footer />
