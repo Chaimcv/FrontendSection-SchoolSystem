@@ -1,5 +1,6 @@
 import React from "react";
 import HeaderImage from "../assets/HeaderImage.png";
+import Emblem from "../assets/central_school_emblem.png";
 
 const Header = () => {
   return (
@@ -10,10 +11,10 @@ const Header = () => {
       {/* <div className="bg-black/50 w-full h-full flex items-center justify-center">
       </div> */}
 
-      <div className="flex flex-row-3 flex justify-around w-full">
-         <div><img src="./assets/c" /></div>
-          <div>search functionality</div>
-           <div>login</div>
+      <div className=" flex justify-around w-full">
+         <div><img src={Emblem} alt="emblem" className="h-[20%] w-[10%] " /></div>
+          <div><input type="text" className="rounded-3xl py-1 px-3 m-6" placeholder="search" /></div>
+           <div><button className="rounded-3xl bg-amber-600 p-2 m-5">Login</button></div>
       </div>
     </div>
   );
