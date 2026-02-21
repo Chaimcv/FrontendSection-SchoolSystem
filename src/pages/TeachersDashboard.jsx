@@ -46,12 +46,14 @@ const TeachersDashboard = () => {
     dispatch(fetchTeachersData()); 
    }
   return (
-    <div>
+                      <div  className='relative min-h-screen'>
       { formvisible && (
         <AddTeacherForm
         OnAddTeacherClick={()=>setFormvisible(false)} />
       )}
-      <div><h3>Add New Teacher  <button onClick={AddTeacher}>+</button></h3></div>
+                       <div className={`${formvisible ? "blur-sm" : ""}`}>
+      <div>
+        <h3>Add New Teacher  <button onClick={AddTeacher}>+</button></h3></div>
       <div>
         <h3>List of teachers</h3>
           <table className='auto p-2 m-2'>
@@ -78,7 +80,7 @@ const TeachersDashboard = () => {
           </table>
           
       </div>
-    
+                         </div>
       
     </div>
   )
